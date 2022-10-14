@@ -1,6 +1,6 @@
 import 'package:app_ticket/screens/hotels_screen.dart';
 import 'package:app_ticket/screens/ticket_screen.dart';
-import 'package:app_ticket/utils/app_list_hotels.dart';
+import 'package:app_ticket/utils/app_info_lists.dart';
 import 'package:app_ticket/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      Text( 
                         "Good moring",
                         style: Styles.headLineStyle3,
                       ),
@@ -95,12 +95,9 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.only(right: 16),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
-                TicketView(),
-                TicketView(),
-                TicketView(),
-              ],
-            ),
+                children: listTickets
+                    .map((singleTicket) => TicketView(ticket: singleTicket))
+                    .toList()),
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
