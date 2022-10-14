@@ -16,7 +16,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOption = <Widget>[
     const HomeScreen(),
-    const SearchScreen(),
+    SearchScreen(),
     const Text('Ticket'),
     const Text('Profile'),
   ];
