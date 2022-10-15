@@ -1,5 +1,6 @@
 import 'package:app_ticket/utils/app_layout.dart';
 import 'package:app_ticket/utils/app_styles.dart';
+import 'package:app_ticket/widgets/icon_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -58,7 +59,36 @@ class SearchScreen extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          Gap(AppLayout.getHeight(25)),
+          Container(
+            child: AppIconText(
+              icon: Icons.flight_takeoff_rounded,
+              text: "Depurture",
+            ),
+          ),
+          Gap(AppLayout.getHeight(25)),
+          Container(
+            child: AppIconText(
+              icon: Icons.flight_land_rounded,
+              text: "Arrival",
+            ),
+          ),
+          Gap(AppLayout.getHeight(25)),
+          Container(
+              padding: EdgeInsets.symmetric(
+                  vertical: AppLayout.getHeight(12),
+                  horizontal: AppLayout.getWidth(12)),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(AppLayout.getWidth(10)),
+                  color: Color(0xD91130CE)),
+              child: Center(
+                  child: Text(
+                'Find Tickets',
+                style: Styles.textStyle.copyWith(
+                  color: Colors.white,
+                ),
+              ))),
         ],
       ),
     );
